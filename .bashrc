@@ -50,7 +50,7 @@ function list-pkgs {
 
 	[ ${ID} == "artix" ]  && pacman -Qe && return 0
 
-	echo "${RED}error${WHITE}: unknown system (I can't be bothered)" && return 1
+	echo -e "${RED}error${WHITE}: unknown system (I can't be bothered)" && return 1
 }
 
 [ -r /etc/bash_completion ] && source /etc/bash_completion
