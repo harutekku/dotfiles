@@ -6,4 +6,4 @@ plus some small functions.
 
 # Author
 
-[harutekku](https://github.com/harutekku/)
+[Harutekku](https://github.com/harutekku/)
