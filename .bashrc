@@ -34,7 +34,7 @@ shopt -s checkwinsize
 
 function d2h {
     [ $# -ne 1 ] && echo "usage: d2h DECIMAL-NUMBER" && return
-    [ ! $(grep -E '^([0-9]|[1-9]\d*)$' <<< "$1") ] && echo "error: invalid argument - $1" && return 1
+    [ ! $(grep -E '^([0-9]|[1-9][0-9]*)$' <<< "$1") ] && echo "error: invalid argument - $1" && return 1
     echo "obase=16; $1" | bc
 }
 
