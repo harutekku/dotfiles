@@ -9,22 +9,22 @@
 [ -r ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Colors
-RED="\[\e[38;5;1m\]"
-WHITE="\[\e[38;5;15m\]"
-AQUA="\[\e[38;5;14m\]"
-YELLOW="\[\e[38;5;11m\]"
-GREEN="\[\e[38;5;10m\]"
-BLUE="\[\e[38;5;12m\]"
-PINK="\[\e[38;5;13m\]"
+RED="\e[38;5;1m"
+WHITE="\e[38;5;15m"
+AQUA="\e[38;5;14m"
+YELLOW="\e[38;5;11m"
+GREEN="\e[38;5;10m"
+BLUE="\e[38;5;12m"
+PINK="\e[38;5;13m"
 
 # Font effects
-BOLD="\[\e[1;32m\]"
-RESET="\[\e[0;32m\]"
+BOLD="\e[1;32m"
+RESET="\e[0;32m"
 
 promptSymbol='$'
 [ $(id -u) -eq 0 ] && promptSymbol='#'
 
-export PS1="${RED}[${WHITE}\u ${AQUA}\W${RED}]${YELLOW}${promptSymbol} ${WHITE}"
+export PS1="\[${RED}\][\[${WHITE}\]\u \[${AQUA}\]\W\[${RED}\]]\[${YELLOW}\]\[${promptSymbol}\] \[${WHITE}\]"
 
 export HISTCONTROL=ignoredups
 
