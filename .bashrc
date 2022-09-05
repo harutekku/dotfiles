@@ -24,7 +24,7 @@ RESET="\e[0;32m"
 promptSymbol='$'
 [ $(id -u) -eq 0 ] && promptSymbol='#'
 
-export PS1="\[${RED}\][\[${WHITE}\]\u \[${AQUA}\]\W\[${RED}\]]\[${YELLOW}\]\[${promptSymbol}\] \[${WHITE}\]"
+export PS1="\[${RED}\][\[${WHITE}\]\u \[${AQUA}\]\W\[${RED}\]]\[${YELLOW}\]${promptSymbol} \[${WHITE}\]"
 
 export HISTCONTROL=ignoredups
 
