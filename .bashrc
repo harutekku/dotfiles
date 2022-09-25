@@ -41,13 +41,12 @@ function list-pkgs {
 
 	source /etc/os-release
 
-	[ ${ID} == "debian" ] && apt list 2>/dev/null | grep '\[installed\]' | cut -d',' -f1 && return 0
-	
-	[ ${ID} == "alpine" ] && apk list -I | cut -d' ' -f1 | sort && return 0
-
-	[ ${ID} == "artix" ]  && pacman -Qe && return 0
-
-	echo -e "${RED}error${WHITE}: unknown system (I can't be bothered)" && return 1
+	case ${ID} in
+		alpine) apk list -I | cut -d' ' -f1 | sort && return 0;;
+		artix ) pacman -Qe && return 0;;
+		debian) apt list 2>/dev/null | grep '\[installed\]' | cut -d',' -f1 && return 0;;
+		*     ) echo -e "${RED}error${WHITE}: unknown system (I can't be bothered)" && return 1;;
+	esac
 }
 
 [ -r /etc/bash_completion ] && source /etc/bash_completion
